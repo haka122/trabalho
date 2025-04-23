@@ -1,0 +1,24 @@
+def calcular_calor(massa: float, calor_especifico: float, delta_t: float) -> float:
+    """
+    Calcula a quantidade de calor (Q) usando a fórmula Q = m * c * ΔT
+    :param massa: Massa em kg
+    :param calor_especifico: Calor específico em J/(kg·°C)
+    :param delta_t: Variação de temperatura em °C
+    :return: Quantidade de calor em Joules (J)
+    """
+    return massa * calor_especifico * delta_t
+
+if __name__ == "__main__":
+    try:
+        # Entrada do usuário
+        massa = float(input("Digite a massa (kg): "))
+        calor_especifico = float(input("Digite o calor específico (J/(kg·°C)): "))
+        delta_t = float(input("Digite a variação de temperatura (°C): "))
+
+        # Cálculo
+        total_calor = calcular_calor(massa, calor_especifico, delta_t)
+
+        # Exibição do resultado
+        print(f"A quantidade de calor transferida é {total_calor:.2f} Joules.")
+    except ValueError:
+        print("Erro: Certifique-se de inserir valores numéricos válidos.")
